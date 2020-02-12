@@ -2,6 +2,9 @@ body{
     margin-top: 50px;
     background: grey;
     background-image: url(https://subtlepatterns.com/patterns/old_mathematics.png);
+    display: block;
+    overflow: auto;
+    height: 100%;
   }
   h2{
     color: steelblue;

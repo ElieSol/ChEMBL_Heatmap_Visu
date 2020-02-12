@@ -1,6 +1,6 @@
 //const url = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json";
 const url = "../modules/data.json"
-var jsonData = [];
+//var jsonData = [];
 var baseTemp = 0;
 
 const colors = [
@@ -30,31 +30,67 @@ function graph() {
     width = 900 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
   
+  console.log("Graph");
+
+  var svg = d3.select(".graph")
+                 .append("svg")
+                 .attr("width", width + margin.left + margin.right)
+                 .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
-  const min = d3.min(jsonData.map(d => d.variance));
-  const max = d3.max(jsonData.map(d => d.variance));
-  const colorScale = d3.scale.quantile()
-    .domain([min + baseTemp, max + baseTemp])
-    .range(colors);
+  d3.json("/data", function(data){
+    jsonData = data.CHEMBL1937;
+    var targetGroup = Object.keys(data);
+
+    const min = d3.min(jsonData.map(d => d.pchembl_value));
+    console.log(min);
+    const max = d3.max(jsonData.map(d => d.pchembl_value));
   
-  var length = jsonData.length-1, year0 = jsonData[0].year;
+    // Build X scales and axis:
+    var x = d3.scaleBand()
+      .range([ 0, width ])
+      .domain(targetGroup)
+      .paddingInner(0.05);
+      svg.append("g")
+      .attr("class", "axis")
+      .style("font-size", 15)
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).tickSize(0))
+      .selectAll("text")
+        .style("text-anchor", "start")
+        .attr("transform", "rotate(90)")
+      
+      
+
+
+    // Build Y scales and axis:
+    var y = d3.scaleBand()
+      .range([ height, 0 ])
+      .domain(targetGroup)
+      .paddingInner(0.05);
+      svg.append("g")
+      .style("font-size", 15)
+      .call(d3.axisLeft(y).tickSize(0))
+      .select(".domain").remove()
+
+    // Build color scale
+    var myColor = d3.scaleSequential()
+      .interpolator(d3.interpolateInferno)
+      .domain([1,100])
+
+
+  /*
+  var length = jsonData.length-1, year0 = len(jsonData);
   var x = d3.time.scale()
           .range([0, width]);
   var y = d3.time.scale()
           .range([0, height]);
   x.domain([ new Date(year0, 0), new Date(jsonData[length].year, 0) ]);
   y.domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]);
+
+
   
-
-  d3.json("/main_interface", function(error, quotes){
-
-
-  var canvas = d3.select(".graph")
-                 .append("svg")
-                 .attr("width", width + margin.left + margin.right)
-                 .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   var barWidth = width / (length/12); //15;//change to width / NO. years / 12
   var barHeight = height/12;//change to height / 12
   var bars = canvas.selectAll("rect")
@@ -140,6 +176,8 @@ function graph() {
                         .text((d) => d.toString())
                         .attr("x", (d,i) => x_axis + (rectWidth*i))
                         .attr("y", y_axis + 35);
+  
+                        */
   
 });
 }

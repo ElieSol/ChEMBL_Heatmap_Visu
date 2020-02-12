@@ -8,11 +8,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/main_interface/<id>')
-def main_interface(id):
+@app.route('/data')
+def data():
     with open('./modules/data.json','r') as jsonfile:
         file_data = json.loads(jsonfile.read())
-    return json.dumps(file_data["CHEMBL325"])
+    return json.dumps(file_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
