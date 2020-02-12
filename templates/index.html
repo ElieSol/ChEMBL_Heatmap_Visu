@@ -18,17 +18,18 @@
       </button>
     
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+        <ul class="nav nav_tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Display</a>
+            <a class="nav-link" data-toggle="tab" href="#nav-display" role="tab" aria-controls="nav-display" aria-selected="false">Display</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
           </li>
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -38,18 +39,36 @@
   </head>
 
   <body style="padding-top: 100px;">
+    <link rel="stylesheet" href="../static/heatmap.css">
+    <!--
     <main role="main" class="container">
     
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+       
       </div>
     
-    </main><!-- /.container -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    </main> 
+    --><!--/.container -->
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
+        <h1>What is ChEMBL Heatmap Visualization ?</h1>
+        <p class="lead">It's a tool implemented as part of a technical test and that allows to visualize activities of chEMBL targets.</p>
+      </div>
+      <div class="tab-pane" id="nav-display" role="tabpanel" aria-labelledby="nav-display-tab">
+        <h2>Heatmap of activities</h2>
+        <div id="heatmap-display" class="graph"></div>
+        <script src="../static/heatmap.js"></script>
+      </div>
+      <div class="tab-pane" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <h2>Additional Informations</h2>
+        Please refer to the <a href="https://github.com/ElieSol/ChEMBL_Heatmap_Visu">GitHub repository of the project</a> for additional information.
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="../app.js"></script>
-
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    
   </body>
+  
 </html>

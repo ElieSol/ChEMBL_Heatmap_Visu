@@ -16,24 +16,24 @@ for i in range(0, len(res)):
     print(res[i]["pchembl_value"])
 
 """
-for target in listOfTargets:
-    #targetMolList = []
-    dictTargets[target] = []
-    for mol in listOfMolecules:
-        activities = new_client.activity
-        res = activities.filter(molecule_chembl_id=mol, target_chembl_id=target,pchembl_value__isnull=False)
-        if len(res) != 0:
-            for i in range(0, len(res)):
-                dictTargets[target].append({
-                    'target_chembl_id': res[i]["target_chembl_id"],
-                    'molecule_chembl_id': res[i]["molecule_chembl_id"],
-                    'pchembl_value': res[i]["pchembl_value"]
-                })
-            #targetMolList.append(res)
-    #print("list length = ",len(targetMolList))
-    #dictTargets[target] = targetMolList
-
-# Number of activities: len(targetMolList)) // Number of dico activities per target
-
-with open('data.json', 'w') as outfile:
-    json.dump(dictTargets, outfile)
+def get_data():
+    for target in listOfTargets:
+        #targetMolList = []
+        dictTargets[target] = []
+        for mol in listOfMolecules:
+            activities = new_client.activity
+            res = activities.filter(molecule_chembl_id=mol, target_chembl_id=target,pchembl_value__isnull=False)
+            if len(res) != 0:
+                for i in range(0, len(res)):
+                    dictTargets[target].append({
+                        'target_chembl_id': res[i]["target_chembl_id"],
+                        'molecule_chembl_id': res[i]["molecule_chembl_id"],
+                        'pchembl_value': res[i]["pchembl_value"]
+                    })
+                #targetMolList.append(res)
+                #print("list length = ",len(targetMolList))
+                #dictTargets[target] = targetMolList
+                
+                # Number of activities: len(targetMolList)) // Number of dico activities per target
+    with open('data.json', 'w') as outfile:
+        json.dump(dictTargets, outfile)
