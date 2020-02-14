@@ -25,3 +25,5 @@ pip3 install
 ```bash
 python app.py
 ```
+
+Note: The heatmap display works but take time to load, please wait 1 minute if it hasn't loaded straigtaway.
