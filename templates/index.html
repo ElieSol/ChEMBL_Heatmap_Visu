@@ -2,11 +2,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,38 +28,26 @@
           </li>
         </ul>
 
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
     </nav>
   </head>
 
   <body style="padding-top: 100px;">
     <link rel="stylesheet" href="../static/heatmap.css">
-    <!--
-    <main role="main" class="container">
-    
-      <div class="starter-template">
-       
-      </div>
-    
-    </main> 
-    --><!--/.container -->
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
         <h1>What is ChEMBL Heatmap Visualization ?</h1>
-        <p class="lead">It's a tool implemented as part of a technical test and that allows to visualize activities of chEMBL targets.</p>
+        <p class="lead">It's a tool implemented as part of a technical test and that allows the visualization of different variable (i.e. number of activity points, average pchEMBL value etc...) for each chEMBL targets-chEMBL molecule pair.</p>
       </div>
       <div class="tab-pane" id="nav-display" role="tabpanel" aria-labelledby="nav-display-tab">
-        <h2>Heatmap of activities</h2>
+        <h2>Heatmap Display</h2>
+        <div id="parametersDropdown"></div>
         <div id="heatmap-display" class="graph"></div>
         <script src="../static/heatmap.js"></script>
       </div>
       <div class="tab-pane" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <h2>Additional Informations</h2>
-        Please refer to the <a href="https://github.com/ElieSol/ChEMBL_Heatmap_Visu">GitHub repository of the project</a> for additional information.
+        <h2>Additional Information</h2>
+        <p>Please refer to the <a href="https://github.com/ElieSol/ChEMBL_Heatmap_Visu">GitHub repository of the project</a> for additional information.</p>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

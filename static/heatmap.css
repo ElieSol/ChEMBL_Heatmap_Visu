@@ -1,21 +1,41 @@
 body{
     margin-top: 50px;
-    background: grey;
-    background-image: url(https://subtlepatterns.com/patterns/old_mathematics.png);
+    background: black;
     display: block;
     overflow: auto;
     height: 100%;
   }
+
+  h1{
+    color: steelblue;
+    font-style: italic;
+  }
+
   h2{
     color: steelblue;
     padding-top: 8px;
+    text-align: center;
   }
   h5{
+    color: white;
     font-weight: bold;
   }
   p{
+    color: white;
     padding: 0px 10px;
+    text-align: center;
   }
+
+  #parametersDropdown{
+    text-align:center;
+  }
+
+  #parametersMenu{
+    display:inline-block;
+    margin-left: 15px;
+    position: relative;
+  }
+
   .centered {
     margin: 0px auto;
     text-align: center;
@@ -27,7 +47,7 @@ body{
     box-shadow: 0px 0px 20px #000;
   }
   .graph{
-    text-align: left;
+    text-align: center;
   }
   .graph rect {
     fill: steelblue;
@@ -38,6 +58,7 @@ body{
   
   .axis text {
     font: 12px sans-serif;
+    fill: white;
   }
   
   .axis path,
@@ -53,10 +74,14 @@ body{
     width: 150px;                  
     height: 55px;                        
     font: 12px sans-serif;        
-    background: black;
-    color: white;
+    background: grey;
+    color: black;
     border: 0px;      
     border-radius: 4px;           
     pointer-events: none;         
+  }
+
+  .legend{
+    
   }
   
