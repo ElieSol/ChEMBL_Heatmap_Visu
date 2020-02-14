@@ -112,7 +112,7 @@ function graph() {
       }
       var mousemove = function(d) {
         tooltip
-          .html("The exact value of<br>this cell is: " + d[param])
+          .html("The value of<br>this cell is: " + roundToTwoNB(d[param]))
           .style("left", (d3.mouse(this)[0]+70) + "px")
           .style("top", (d3.mouse(this)[1]) + "px")
       }
@@ -223,10 +223,19 @@ function formatData(arr){
 
 /*
   Utility function that allows the generation of an array starting and ending with specific values
-  Parameters; start (number), end (number), step (number)
+  Parameters: start (number), end (number), step (number)
   Return: []
 */
 function range(start, end, step) {
   const len = Math.floor((end - start) / step) + 1
   return Array(len).fill().map((_, idx) => start + (idx * step))
+}
+
+/*
+  Utility function that rounds up a number to two
+  Parameters: number to round up
+  Return: number rounded up
+*/
+function roundToTwoNB(number) {    
+    return +(Math.round(number + "e+2")  + "e-2");
 }
