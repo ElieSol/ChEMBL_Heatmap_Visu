@@ -14,6 +14,8 @@ Other librairies used:
 - Flask
 - Ajax
 
+Use of ChEMBL webresource client on the back-end side
+
 ..* Installation instructions for the librairies used
 
 ``bash
