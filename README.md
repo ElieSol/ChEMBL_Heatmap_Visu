@@ -1,5 +1,8 @@
 # ChEMBL_Heatmap_Visualization
 
+![alt text](https://github.com/ElieSol/ChEMBL_Heatmap_Visu/blob/master/demo1.png)
+
+> **Figure:** Preview of the User Interface of the Web Application
 
 ### 1. Tools / Requirements
 - Javascript / HTML / CSS
