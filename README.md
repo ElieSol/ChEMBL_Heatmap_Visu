@@ -1,6 +1,6 @@
 # ChEMBL_Heatmap_Visualization
 
-![alt text](https://github.com/ElieSol/ChEMBL_Heatmap_Visu/blob/master/demo1.png)
+![alt text](https://github.com/ElieSol/ChEMBL_Heatmap_Visu/blob/master/view.png)
 
 > **Figure:** Preview of the User Interface of the Web Application
 
